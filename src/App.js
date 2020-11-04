@@ -8,7 +8,7 @@ function App() {
   const [guess, setGuess] = React.useState("");
   function checkGuess() {
     if (guess.toLowerCase() === pokemonName) {
-      setDark(0.5);
+      setDark(0.75);
     } else {
       prompt("Keep trying loser");
     }
@@ -22,7 +22,7 @@ function App() {
       const url = `https://pokeapi.co/api/v2/pokemon/${pokeNumber}`;
       const res = await axios.get(url);
       setPokemonName(res.data.name);
-      setPokemonSprite(res.data.sprites.back_default);
+      setPokemonSprite(res.data.sprites.front_default);
       setDark(0);
       setGuess(null);
     } catch (e) {
